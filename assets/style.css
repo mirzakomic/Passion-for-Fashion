@@ -21,6 +21,10 @@
   min-height: 100vh;
 }
 
+.whitesection2 {
+  min-height: 30vh;
+}
+
 .head_wrapper {
   display: flex;
   justify-content: space-between;
@@ -122,11 +126,15 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 80vh;
+  min-height: 80vh;
   position: relative;
+  margin-top: 15vh;
+  margin-bottom: 15vh;
 }
 .whitesection .mid {
   max-width: 450px;
+  margin-top: 20vh;
+  margin-bottom: 20vh;
 }
 .whitesection .mid h3 {
   font-size: 4rem;
@@ -153,7 +161,7 @@
   width: 300px;
   height: 200px;
   right: 160px;
-  top: -80px;
+  top: -24vh;
   z-index: 999;
   background-image: url(./img/action1.jpeg);
 }
@@ -169,21 +177,21 @@
   width: 240px;
   height: 160px;
   right: 0;
-  top: 600px;
+  top: 55%;
 }
 .whitesection .mid .act4 {
   background-image: url(./img/action4.jpeg);
   width: 300px;
   height: 200px;
-  left: calc(50% - 150px - 250px);
-  top: 904px;
+  left: 10vw;
+  top: 85%;
 }
 .whitesection .mid .act5 {
   background-image: url(./img/action5.jpeg);
   width: 300px;
   height: 200px;
-  left: calc(50% - 150px + 290px);
-  top: 1000px;
+  right: 10vw;
+  top: 80vh;
 }
 .whitesection .mid .act6 {
   background-image: url(./img/action6.jpeg);
@@ -219,6 +227,7 @@
   align-items: center;
   flex-direction: column;
   flex-direction: row;
+  margin-top: 15vh;
 }
 .blacksection .sub_wrap article, .blacksection3 .sub_wrap article, .blacksection2 .sub_wrap article {
   width: 45vw;

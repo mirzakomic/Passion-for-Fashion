@@ -108,6 +108,10 @@ $animate: 300ms ease-in-out all;
 @include mWmH;
 }
 
+.whitesection2 {
+    min-height: 30vh;
+}
+
 .head_wrapper {
     @include flexSBc();
     background-color: $black;
@@ -190,10 +194,14 @@ $animate: 300ms ease-in-out all;
 
     .whitesection {
         @include flexC;
-        height: 80vh;
+        min-height: 80vh;
         position: relative;
+        margin-top: 15vh;
+        margin-bottom: 15vh;
         .mid {
             max-width: 450px;
+            margin-top: 20vh;
+            margin-bottom: 20vh;
             h3 {
                 @include h1style;
                 color: $black;
@@ -215,7 +223,7 @@ $animate: 300ms ease-in-out all;
                 width: 300px;
                 height: 200px;
                 right: 160px;
-                top: -80px;
+                top: -24vh;
                 z-index: 999;
                 background-image: url(./img/action1.jpeg);
 
@@ -236,7 +244,7 @@ $animate: 300ms ease-in-out all;
                 width: 240px;
                 height: 160px;
                 right: 0;
-                top: 600px;
+                top: 55%;
             }
 
             .act4 {
@@ -244,8 +252,8 @@ $animate: 300ms ease-in-out all;
                 background-image: url(./img/action4.jpeg);
                 width: 300px;
                 height: 200px;
-                left: calc(50% - 300px/2 - 250px);
-                top: 904px;
+                left: 10vw;
+                top: 85%;
             }
 
             .act5 {
@@ -253,8 +261,8 @@ $animate: 300ms ease-in-out all;
                 background-image: url(./img/action5.jpeg);
                 width: 300px;
                 height: 200px;
-                left: calc(50% - 300px/2 + 290px);
-                top: 1000px;
+                right: 10vw;
+                top: 80vh;
         }
 
             .act6 {
@@ -288,6 +296,7 @@ $animate: 300ms ease-in-out all;
     .sub_wrap {
         @include flexC;
         flex-direction: row;
+        margin-top: 15vh;
         article {
             width: 45vw;
             h4 {
