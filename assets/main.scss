@@ -1,0 +1,464 @@
+$black: #000;
+$white: #fff;
+$gray: #b0b0b0d7;
+$margintopbtm: 1rem 0 1rem 0;
+$paddingBtopBtm: 3vh 0 3vh;
+$clampBig: clamp(3.5rem, 4rem, 4.5rem);
+$mainPadding: 4rem;
+$smallerPadding: 1rem 2rem;
+$animate: 300ms ease-in-out all;
+
+@font-face {
+    font-family: "WorkSans";
+    src: url(./fonts/WorkSans-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: "Lora";
+    src: url(./fonts/Lora-VariableFont_wght.ttf);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@mixin btn {
+        padding: $smallerPadding;
+        background-color: $black;
+        color: $white;
+        transition: $animate;
+        border: 0.1rem solid $white;
+        &:hover {
+            background-color: $white;
+            color: $black;
+            transition: $animate;
+            cursor: pointer;
+        }
+}
+
+@mixin basictextp {
+    font-size: clamp(1rem, 1.2rem, 1.5rem);
+    padding: 1rem 0 1rem 0;
+    font-weight: 600;
+    font-family: "WorkSans";
+}
+
+@mixin basictextSmaller {
+    font-size: clamp(0.8rem, 1rem, 1rem);
+    padding: 1rem 0 1rem 0;
+    font-weight: 600;
+    font-family: "WorkSans";
+}
+
+@mixin h3style {
+    font-size: clamp(3rem, 3.5rem, 4rem);
+    font-family: "Lora";
+    font-weight: 600;
+}
+
+@mixin h4style {
+    font-size: clamp(1.7rem, 1.8rem, 2rem);
+    font-family: "Lora";
+    font-weight: 600;
+}
+
+@mixin h1style {
+    font-size: $clampBig;
+    font-weight: 600;
+    font-family: "Lora";
+    line-height: 7rem;
+}
+
+@mixin mWmH{
+    max-width: 100vw;
+    min-height: 100vh;
+}
+
+@mixin flexC {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+@mixin flexLeftCol {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin flexSBc {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+@mixin flexSB {
+    display: flex;
+    justify-content: space-between;
+}
+
+.wrappwright {
+    width: 80vw;
+}
+
+.main_wrapper {
+@include mWmH;
+}
+
+.head_wrapper {
+    @include flexSBc();
+    background-color: $black;
+    @include mWmH;
+    .lineup {
+        height: 20vh;
+        background-color: $gray;
+        width: 1px;
+    }
+    .head_text {
+        color: $white;
+        text-align: center;
+            p {
+                font-family: "WorkSans";
+                font-weight: 600;
+                margin: $margintopbtm;
+            }
+            h1 {
+                @include h1style;
+                text-transform: uppercase;
+                line-height: 3rem;
+                span {
+                    display: block;
+                    color: $black;
+                    -webkit-text-stroke: 1px;
+                    -webkit-text-stroke-color: $white;
+
+                }
+            }
+    }
+    .logobutton {
+        @include flexSB;
+        min-width: 90vw;
+        padding: $mainPadding;
+        margin-bottom: 10vh;
+        .btn {
+            padding: $smallerPadding;
+            background-color: $black;
+            color: $white;
+            transition: $animate;
+            border: 0.1rem solid $white;
+            &:hover {
+                background-color: $white;
+                color: $black;
+                transition: $animate;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.textwmap {
+    @include flexLeftCol;
+    padding: $mainPadding;
+    @include mWmH;
+    background-color: $black;
+    color: $white;
+    background-image: url(./img/map.svg);
+    background-position: bottom right;
+    background-repeat: no-repeat;
+    background-size: 40vw;
+    .wrappwright {
+        max-width: 891px;
+            h1 {
+                @include h1style;
+                margin-bottom: 5vh;
+            }
+            .info {
+                padding: $paddingBtopBtm;
+                p {
+                    @include basictextp;
+                }
+
+                h3 {
+                    @include h3style;
+                }
+            }
+        }
+    }
+
+    .whitesection {
+        @include flexC;
+        height: 80vh;
+        position: relative;
+        .mid {
+            max-width: 450px;
+            h3 {
+                @include h1style;
+                color: $black;
+                line-height: 4rem;
+                overflow-y: hidden;
+                margin-bottom: 1vh;
+            }
+            p {
+                line-height: 2rem;
+                @include basictextSmaller;
+            }
+            .act {
+                position: absolute;
+                background-size: cover;  
+            }
+
+            .act1 {
+                @extend .act;
+                width: 300px;
+                height: 200px;
+                right: 160px;
+                top: -80px;
+                z-index: 999;
+                background-image: url(./img/action1.jpeg);
+
+            }
+
+            .act2 {
+                @extend .act;
+                background-image: url(./img/action2.jpeg);
+                top: 200px;
+                left: 40px;
+                width: 24rem;
+                height: 16rem;
+            }
+
+            .act3 {
+                @extend .act;
+                background-image: url(./img/action3.jpeg);
+                width: 240px;
+                height: 160px;
+                right: 0;
+                top: 600px;
+            }
+
+            .act4 {
+                @extend .act;
+                background-image: url(./img/action4.jpeg);
+                width: 300px;
+                height: 200px;
+                left: calc(50% - 300px/2 - 250px);
+                top: 904px;
+            }
+
+            .act5 {
+                @extend .act;
+                background-image: url(./img/action5.jpeg);
+                width: 300px;
+                height: 200px;
+                left: calc(50% - 300px/2 + 290px);
+                top: 1000px;
+        }
+
+            .act6 {
+                @extend .act;
+                background-image: url(./img/action6.jpeg);
+                width: 240px;
+                height: 160px;
+                left: 0px;
+                top: 1337px;
+        }
+
+            .act7 {
+                @extend .act;
+                background-image: url(./img/action7.jpeg);
+                width: 300px;
+                height: 200px;
+                right: 240px;
+                top: 1680px;
+                z-index:100;
+        }
+    }
+}
+
+.blacksection {
+    @include mWmH;
+    @include flexC;
+    background-color: $black;
+    color: $white;
+    position: relative;
+    z-index: 15;
+    .sub_wrap {
+        @include flexC;
+        flex-direction: row;
+        article {
+            width: 45vw;
+            h4 {
+                @include h4style;
+            }
+            h1 {
+                @include h1style;
+                line-height: 3rem;
+            }
+            p {
+                font-family: "WorkSans";
+                margin-top: 2vh;
+                padding-bottom: 2vh;
+            }
+        }    
+    }
+        .img-cont {
+            display: flex;
+            flex-direction: row;
+            margin-top: 5vh;
+            width: 80vw;
+            position: relative;
+            #firstbear {
+                width: 703px;
+                height: 703px;
+            }
+            #bear2 {
+                width: 358px;
+                height: 463px;
+                position: absolute;
+                right: 175px;
+                top: 180px;
+            }
+        }
+}
+
+.blacksection2 {
+    @extend .blacksection;
+    background-color: white;
+    color: black;
+    z-index: 14;
+    min-height: 100vh;
+    margin-bottom: 10vh;
+    .wrap_animation {
+        position: relative;
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        width: -webkit-fill-available;
+        height: 300px;
+        overflow: hidden;
+        img#rotation {
+            width: 380px;
+            height: 380px;
+            position: absolute;
+            top: -150px;
+            animation: keeprotating 15s linear infinite forwards;
+        }
+    }
+    .img-cont {
+        flex-direction: row-reverse;
+        #bear2 {
+            left: 175px;
+        }
+    }
+}
+
+@keyframes keeprotating {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+    
+}
+
+.blacksection3 {
+    overflow: hidden;
+    min-height: 60vh;
+    height: 80vh;
+    align-items: flex-start;
+    @extend .blacksection;
+    h4 {
+    @include h4style;
+    }
+
+    h1 {
+        display: inline-block;
+    span {
+        display: inline-block;
+        color: $white;
+        -webkit-text-stroke: 1px;
+        -webkit-text-stroke-color: $black;
+    }
+}
+
+.date_anim_wrap {
+    position: absolute;
+    right: -403px;
+    top: 70px;
+    transform: rotate(45deg);
+    background-color: $white;
+    width: 100vw;
+    color: $black;
+    padding: 0.5rem 0 0.5rem 0;
+    @include h1style;
+    text-align: center;
+    .white_stripe {
+        display: flex;
+        flex-direction: row;
+        width: max-content;
+        overflow-x: hidden;
+        .Text-anim {
+            animation: animtext 15s linear infinite alternate-reverse forwards;
+        }
+    }
+}
+
+
+    p {
+        padding: $paddingBtopBtm;
+        font-family: "WorkSans";
+    }
+
+    .sub_wrap2 {
+        flex-direction: column;
+        width: 50vw;
+        padding: $mainPadding;
+    }
+
+    .btn {
+        @include btn;
+        margin: $margintopbtm;
+    }
+    
+}
+
+@keyframes animtext {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(500px);
+    }
+    
+}
+
+footer {
+    background-color: $black;
+    .f_wrap {
+        padding: $mainPadding;
+        color: $white;
+        display: flex;
+        gap: 1rem;
+        justify-content: space-between;
+        p {
+            display: block;
+            @include basictextSmaller;
+        }
+        .s-media {
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+            img {
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+}
